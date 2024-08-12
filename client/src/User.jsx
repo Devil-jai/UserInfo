@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 const url = "https://userinfo-ljsu.onrender.com"
 
+
 function User() {
     const [name,setName] = useState()
     const [email,setEmail] = useState()
@@ -61,12 +62,12 @@ function User() {
         getUser()
     },[])
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 mx-auto">
         <div className="items-center flex flex-col ">
             <h1 className="text-3xl font-bold ">
                 Person Detail App
             </h1>
-            <div className="w-1/4">
+            <div className="xl:w-1/4 lg:w-1/3 md:w-1/2 w-full">
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                         Username
@@ -107,15 +108,15 @@ function User() {
                 
             </div>
             
-            <div>
+            <div >
                 {
                     user.map((data)=>{
                         return(
-                            <div className="flex mt-12">
-                    <div className='flex-auto w-32'>{data.name}</div>
-                    <div className='flex-auto w-32'>{data.email}</div>
-                    <button type="button" onClick={()=>startEditing(data)}  className="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >Update</button>
-                    <button type="button" onClick={()=>deleteuser(data._id)}  className="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >delete</button>
+                            <div className="flex mt-12 items-center">
+                    <div className='flex-auto md:text-base text-sm w-20 md:w-32'>{data.name}</div>
+                    <div className='flex-auto md:text-base text-sm w-20 md:w-32'>{data.email}</div>
+                    <button type="button" onClick={()=>startEditing(data)}  className="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm md:px-5 px-2 py-2.5 text-xs md:text-base me-2 ms-6  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >Update</button>
+                    <button type="button" onClick={()=>deleteuser(data._id)}  className="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm md:px-5 px-2 py-2.5 ms-4  text-xs md:text-base dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" >delete</button>
                     
                 </div>
                         )

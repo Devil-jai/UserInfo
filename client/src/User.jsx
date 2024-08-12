@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-const url = "http://localhost:4000"
+const url = "https://userinfo-ljsu.onrender.com"
 
 function User() {
     const [name,setName] = useState()

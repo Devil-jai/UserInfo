@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "https://userinfo-1-wg7g.onrender.com"
 }
 app.use(cors(corsOptions))
 
